@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/WPFNaloga1/WPFNaloga1/obj
+/WPFNaloga1/WPFNaloga1/bin/Debug/net8.0-windows
+/WPFNaloga1/.vs/WPFNaloga1
+/WPFNaloga1/.vs/ProjectEvaluation
+/.vs
