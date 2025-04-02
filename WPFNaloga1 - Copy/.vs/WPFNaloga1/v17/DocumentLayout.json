@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\avtoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\avtoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\fuel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\fuel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\datatriggerclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\datatriggerclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\avto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\avto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Avto.cs",
+              "DocumentMoniker": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\Avto.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\Avto.cs",
+              "ToolTip": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\Avto.cs",
+              "RelativeToolTip": "WPFNaloga1\\Avto.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAewCAAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T13:21:38.99Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WPFNaloga1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\MainWindow.xaml",
+              "RelativeToolTip": "WPFNaloga1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-22T17:54:38.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Fuel.cs",
+              "DocumentMoniker": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\Fuel.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\Fuel.cs",
+              "ToolTip": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\Fuel.cs",
+              "RelativeToolTip": "WPFNaloga1\\Fuel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T17:49:43.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\AssemblyInfo.cs",
+              "RelativeToolTip": "WPFNaloga1\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T17:48:54.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AvtoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\AvtoViewModel.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\AvtoViewModel.cs",
+              "ToolTip": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\AvtoViewModel.cs",
+              "RelativeToolTip": "WPFNaloga1\\AvtoViewModel.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAYwGgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T13:22:27.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataTriggerClass.cs",
+              "DocumentMoniker": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\DataTriggerClass.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\DataTriggerClass.cs",
+              "ToolTip": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\DataTriggerClass.cs",
+              "RelativeToolTip": "WPFNaloga1\\DataTriggerClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T17:44:48.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\RelayCommand.cs",
+              "ToolTip": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\RelayCommand.cs",
+              "RelativeToolTip": "WPFNaloga1\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T16:04:14.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\metod\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WPFNaloga1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-22T18:38:47.45Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
