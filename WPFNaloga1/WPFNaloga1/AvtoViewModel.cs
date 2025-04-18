@@ -13,6 +13,7 @@ namespace WPFNaloga1
         public ObservableCollection<Avto> Avtomobili { get; set; } = new ObservableCollection<Avto>();
         public ObservableCollection<Avto> FilterAvtomobili { get; set; } = new ObservableCollection<Avto>();
         public ICommand DodajAvtoCommand { get; }
+        public ICommand DodajAvtoStaticnoCommand { get; }
         public ICommand OdstraniAvtoCommand { get; }
         public ICommand IzhodCommand { get; }
         public ICommand UrediAvtoStaticnoCommand { get; }
@@ -63,12 +64,24 @@ namespace WPFNaloga1
             Avtomobili.Add(new Avto { Znamka = "BMW", Model = "X5", Leto = 2021, Slika = "/Slike/x5.jpg", Cena = 50000, ProstorninaMotorja = 3.0f });
             Avtomobili.Add(new Avto { Znamka = "Ford", Model = "Focus", Leto = 2018, Slika = "/Slike/focus.jpg", Cena = 15000, ProstorninaMotorja = 1.5f });
             allFuels = new ObservableCollection<Fuel>((Fuel[])Enum.GetValues(typeof(Fuel)));
+            DodajAvtoStaticnoCommand = new RelayCommand(o => DodajAvtoStaticno());
             DodajAvtoCommand = new RelayCommand(o => DodajAvto());
             UrediAvtoStaticnoCommand = new RelayCommand(o => UrediAvto(), o => IzbraniAvto != null);
             OdstraniAvtoCommand = new RelayCommand(o => OdstraniAvto(), o => IzbraniAvto != null);
             IzhodCommand = new RelayCommand(o => IzhodIzAplikacije());
             FiltrirajCommand = new RelayCommand(o => FilterCars());
             FilterCars();
+        }
+
+        private void DodajAvto()
+        {
+            var dodajWindow = new DodajOglasWindow();
+            if (dodajWindow.ShowDialog() == true)
+            {
+                Avto novAvto = dodajWindow.NovAvto;
+                Avtomobili.Add(novAvto);
+                FilterCars();// tvoj ObservableCollection<Avto>
+            }
         }
 
         private void IzhodIzAplikacije()
@@ -92,7 +105,7 @@ namespace WPFNaloga1
             }
         }
 
-        private void DodajAvto()
+       private void DodajAvtoStaticno()
         {
             Avtomobili.Add(new Avto { Znamka = "VW", Model = "Golf", Leto = 2020, Slika = "/Slike/golf.jpg", Cena = 20000, ProstorninaMotorja = 2.0f });
             FilterCars();
