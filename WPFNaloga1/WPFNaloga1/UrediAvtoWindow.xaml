@@ -1,0 +1,42 @@
+﻿<Window x:Class="WPFNaloga1.UrediAvtoWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:local="clr-namespace:WPFNaloga1"
+       mc:Ignorable="d"
+       Title="Uredi Oglas" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Fixed the issue by replacing 'PlaceholderText' with 'ToolTip' -->
+        <TextBox Grid.Row="0" x:Name="ZnamkaTextBox" Margin="0,5" ToolTip="Znamka"/>
+        <TextBox Grid.Row="1" x:Name="ModelTextBox" Margin="0,5" ToolTip="Model"/>
+        <TextBox Grid.Row="2" x:Name="LetoTextBox" Margin="0,5" ToolTip="Leto"/>
+        <TextBox Grid.Row="3" x:Name="CenaTextBox" Margin="0,5" ToolTip="Cena"/>
+        <TextBox Grid.Row="4" x:Name="ProstorninaTextBox" Margin="0,5" ToolTip="Prostornina motorja"/>
+
+        <ComboBox Grid.Row="5" x:Name="GorivoComboBox" Margin="0,5">
+            <ComboBoxItem Content="Bencin" />
+            <ComboBoxItem Content="Dizel" />
+            <ComboBoxItem Content="Elektrika" />
+        </ComboBox>
+
+        <Image Grid.Row="6" x:Name="SlikaImage" Height="100" Margin="0,5" Stretch="Uniform" MouseDown="SlikaImage_MouseDown"/>
+
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10">
+            <Button Content="Shrani" Width="80" Margin="5,0" Click="Shrani_Click"/>
+            <Button Content="Prekliči" Width="80" Margin="5,0" Click="Preklici_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -21,9 +21,11 @@
                 <MenuItem Header="Izhod" Command="{Binding IzhodCommand}" />
             </MenuItem>
             <MenuItem Header="Oglas">
+                <MenuItem Header="Uredi" Command="{Binding UrediAvtoCommand}" />
                 <MenuItem Header="Uredi Statično" Command="{Binding UrediAvtoStaticnoCommand}" />
                 <MenuItem Header="Odstrani" Command="{Binding OdstraniAvtoCommand}" />
                 <MenuItem Header="Dodaj" Command="{Binding DodajAvtoCommand}" />
+                <MenuItem Header="Dodaj Statično" Command="{Binding DodajAvtoStaticnoCommand}" />
                 <MenuItem Header="Uredi" Command="{Binding ShraniCommand}" />
             </MenuItem>
 
@@ -66,7 +68,7 @@
             </Grid.RowDefinitions>
 
             <!-- Seznam avtomobilov -->
-            <ListView ItemsSource="{Binding FilterAvtomobili}" SelectedItem="{Binding IzbraniAvto}">
+            <ListView ItemsSource="{Binding FilterAvtomobili}" SelectedItem="{Binding IzbraniAvto}" SelectionChanged="ListView_SelectionChanged">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal" Margin="5">

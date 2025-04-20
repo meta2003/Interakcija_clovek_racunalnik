@@ -31,7 +31,7 @@
             <ComboBoxItem Content="Elektrika" />
         </ComboBox>
 
-        <Image Grid.Row="6" x:Name="SlikaImage" Height="100" Margin="0,5" Stretch="Uniform" MouseDown="SlikaImage_MouseDown"/>
+        <Image Grid.Row="6" x:Name="SlikaImage" Height="100" Margin="0,5"  Stretch="Uniform" MouseDown="SlikaImage_MouseDown"/>
 
         <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10">
             <Button Content="Shrani" Width="80" Margin="5,0" Click="Shrani_Click"/>

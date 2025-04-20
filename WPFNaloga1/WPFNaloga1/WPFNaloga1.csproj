@@ -20,6 +20,7 @@
     <None Remove="Slike\Ikone\edit_static.jpg" />
     <None Remove="Slike\Ikone\exit.jpg" />
     <None Remove="Slike\Ikone\filter.jpg" />
+    <None Remove="Slike\Ikone\photo.png" />
     <None Remove="Slike\no-car.jpg" />
     <None Remove="Slike\x5.jpg" />
   </ItemGroup>
@@ -39,8 +40,17 @@
     <Resource Include="Slike\Ikone\edit_static.jpg" />
     <Resource Include="Slike\Ikone\exit.jpg" />
     <Resource Include="Slike\Ikone\filter.jpg" />
+    <Resource Include="Slike\Ikone\photo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Slike\no-car.jpg" />
     <Resource Include="Slike\x5.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Resources\Styles.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
   </ItemGroup>
 
 </Project>

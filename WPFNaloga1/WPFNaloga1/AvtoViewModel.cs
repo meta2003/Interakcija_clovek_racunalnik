@@ -12,12 +12,18 @@ namespace WPFNaloga1
     {
         public ObservableCollection<Avto> Avtomobili { get; set; } = new ObservableCollection<Avto>();
         public ObservableCollection<Avto> FilterAvtomobili { get; set; } = new ObservableCollection<Avto>();
+
+        public event Action<Avto> ZahtevajUrejanjeAvta;
         public ICommand DodajAvtoCommand { get; }
         public ICommand DodajAvtoStaticnoCommand { get; }
         public ICommand OdstraniAvtoCommand { get; }
         public ICommand IzhodCommand { get; }
         public ICommand UrediAvtoStaticnoCommand { get; }
+        public ICommand UrediAvtoCommand { get; }
         public ICommand FiltrirajCommand { get; }
+
+        private bool urediOkno = false;
+        private UrediAvtoWindow urediWindow;
 
         private Avto _izbraniAvto;
         private string filterText;
@@ -66,13 +72,20 @@ namespace WPFNaloga1
             allFuels = new ObservableCollection<Fuel>((Fuel[])Enum.GetValues(typeof(Fuel)));
             DodajAvtoStaticnoCommand = new RelayCommand(o => DodajAvtoStaticno());
             DodajAvtoCommand = new RelayCommand(o => DodajAvto());
-            UrediAvtoStaticnoCommand = new RelayCommand(o => UrediAvto(), o => IzbraniAvto != null);
+            UrediAvtoStaticnoCommand = new RelayCommand(o => UrediStaticnoAvto(), o => IzbraniAvto != null);
+            UrediAvtoCommand = new RelayCommand(o=> OdpriUrediAvto(), o => IzbraniAvto != null);
             OdstraniAvtoCommand = new RelayCommand(o => OdstraniAvto(), o => IzbraniAvto != null);
             IzhodCommand = new RelayCommand(o => IzhodIzAplikacije());
             FiltrirajCommand = new RelayCommand(o => FilterCars());
             FilterCars();
         }
 
+        private void OdpriUrediAvto()
+        {
+            ZahtevajUrejanjeAvta?.Invoke(IzbraniAvto);
+        }
+
+      
         private void DodajAvto()
         {
             var dodajWindow = new DodajOglasWindow();
@@ -89,7 +102,7 @@ namespace WPFNaloga1
             System.Windows.Application.Current.Shutdown();
         }
 
-        private void UrediAvto()
+        private void UrediStaticnoAvto()
         {
             if (IzbraniAvto != null)
             {
@@ -105,7 +118,7 @@ namespace WPFNaloga1
             }
         }
 
-       private void DodajAvtoStaticno()
+        private void DodajAvtoStaticno()
         {
             Avtomobili.Add(new Avto { Znamka = "VW", Model = "Golf", Leto = 2020, Slika = "/Slike/golf.jpg", Cena = 20000, ProstorninaMotorja = 2.0f });
             FilterCars();

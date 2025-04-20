@@ -26,6 +26,7 @@ namespace WPFNaloga1
         public DodajOglasWindow()
         {
             InitializeComponent();
+            SlikaImage.Source = new BitmapImage(new Uri("Slike/Ikone/photo.png", UriKind.Relative));
         }
 
         private void SlikaImage_MouseDown(object sender, MouseButtonEventArgs e)

@@ -11,10 +11,36 @@ namespace WPFNaloga1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private UrediAvtoWindow urediWindow;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            if (DataContext is AvtoViewModel vm)
+            {
+                vm.ZahtevajUrejanjeAvta += OdpriAliPosodobiUrediOkno;
+            }
         }
+        private void OdpriAliPosodobiUrediOkno(Avto avto)
+        {
+            if (avto == null)
+                return;
+
+            if (urediWindow != null)
+            {
+                urediWindow.NastaviAvto(avto);
+                urediWindow.Focus();
+                return;
+            }
+
+            urediWindow = new UrediAvtoWindow();
+            urediWindow.Owner = this;
+            urediWindow.NastaviAvto(avto);
+            urediWindow.Closed += (s, e) => urediWindow = null;
+            urediWindow.Show();
+        }
+
         private void ListView_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             if (sender is ListView listView && listView.SelectedItem is Avto izbraniAvto)
@@ -28,24 +54,39 @@ namespace WPFNaloga1
         {
 
         }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (DataContext is AvtoViewModel vm && vm.IzbraniAvto != null)
+            {
+                // Če je urejevalno okno že odprto, ga posodobimo
+                if (urediWindow != null)
+                {
+                    urediWindow.NastaviAvto(vm.IzbraniAvto);
+                    urediWindow.Focus();
+                }
+            }
+        }
+
     }
 
-    public class NullToVisibilityConverter : IValueConverter
+
+public class NullToVisibilityConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            bool invert = parameter != null && parameter.ToString().Equals("Invert", StringComparison.OrdinalIgnoreCase);
-            bool isNull = value == null;
+        bool invert = parameter != null && parameter.ToString().Equals("Invert", StringComparison.OrdinalIgnoreCase);
+        bool isNull = value == null;
 
-            return (isNull ^ invert) ? Visibility.Collapsed : Visibility.Visible;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-
+        return (isNull ^ invert) ? Visibility.Collapsed : Visibility.Visible;
     }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+
+}
     public class PriceLessThanConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -62,5 +103,4 @@ namespace WPFNaloga1
             throw new NotImplementedException();
         }
     }
-
 }
