@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPFNaloga1"
         mc:Ignorable="d"
         Title="Uredi oglas" Height="700" Width="800"
         Background="{StaticResource BackgroundBrush}">
@@ -25,37 +24,37 @@
             <!-- Znamka -->
             <StackPanel Grid.Row="0">
                 <TextBlock Text="Znamka" Style="{StaticResource BaseTextBlock}" />
-                <TextBox x:Name="ZnamkaTextBox" Style="{StaticResource DefaultTextBox}" />
+                <TextBox x:Name="ZnamkaTextBox" Text="{Binding Znamka, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DefaultTextBox}" />
             </StackPanel>
 
             <!-- Model -->
             <StackPanel Grid.Row="1">
                 <TextBlock Text="Model" Style="{StaticResource BaseTextBlock}" />
-                <TextBox x:Name="ModelTextBox" Style="{StaticResource DefaultTextBox}" />
+                <TextBox x:Name="ModelTextBox" Text="{Binding Model, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DefaultTextBox}" />
             </StackPanel>
 
             <!-- Leto -->
             <StackPanel Grid.Row="2">
                 <TextBlock Text="Leto" Style="{StaticResource BaseTextBlock}" />
-                <TextBox x:Name="LetoTextBox" Style="{StaticResource DefaultTextBox}" />
+                <TextBox x:Name="LetoTextBox" Text="{Binding Leto, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DefaultTextBox}" />
             </StackPanel>
 
             <!-- Cena -->
             <StackPanel Grid.Row="3">
                 <TextBlock Text="Cena" Style="{StaticResource BaseTextBlock}" />
-                <TextBox x:Name="CenaTextBox" Style="{StaticResource DefaultTextBox}" />
+                <TextBox x:Name="CenaTextBox" Text="{Binding Cena, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DefaultTextBox}" />
             </StackPanel>
 
             <!-- Prostornina -->
             <StackPanel Grid.Row="4">
                 <TextBlock Text="Prostornina motorja" Style="{StaticResource BaseTextBlock}" />
-                <TextBox x:Name="ProstorninaTextBox" Style="{StaticResource DefaultTextBox}" />
+                <TextBox x:Name="ProstorninaTextBox" Text="{Binding ProstorninaMotorja, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DefaultTextBox}" />
             </StackPanel>
 
             <!-- Gorivo -->
             <StackPanel Grid.Row="5">
                 <TextBlock Text="Vrsta goriva" Style="{StaticResource BaseTextBlock}" />
-                <ComboBox x:Name="GorivoComboBox" Style="{StaticResource DefaultComboBox}">
+                <ComboBox x:Name="GorivoComboBox" SelectedItem="{Binding Gorivo, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DefaultComboBox}">
                     <ComboBoxItem Content="Bencin" />
                     <ComboBoxItem Content="Dizel" />
                     <ComboBoxItem Content="Elektrika" />
@@ -65,11 +64,11 @@
             <!-- Slika -->
             <StackPanel Grid.Row="6">
                 <TextBlock Text="Slika vozila" Style="{StaticResource BaseTextBlock}" />
-                <Image x:Name="SlikaImage" Height="100" Style="{StaticResource DefaultImage}" MouseDown="SlikaImage_MouseDown"/>
+                <Image x:Name="SlikaImage" Source="{Binding Slika}" Height="100" Style="{StaticResource DefaultImage}" MouseDown="SlikaImage_MouseDown"/>
             </StackPanel>
 
             <!-- Gumbi -->
-            <StackPanel Grid.Row="8" Orientation="Horizontal" >
+            <StackPanel Grid.Row="8" Orientation="Horizontal">
                 <Button Content=" Shrani " Style="{StaticResource BaseButton}" Click="Shrani_Click"/>
                 <Button Content=" Prekliči " Style="{StaticResource BaseButton}" Click="Preklici_Click"/>
             </StackPanel>

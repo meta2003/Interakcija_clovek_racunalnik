@@ -19,43 +19,14 @@ namespace WPFNaloga1
             InitializeComponent();
         }
 
+      // Setting the DataContext so all controls are bound to this Avto object.
         public void NastaviAvto(Avto avto)
         {
             _trenutniAvto = avto;
-
-            ZnamkaTextBox.Text = avto.Znamka;
-            ModelTextBox.Text = avto.Model;
-            LetoTextBox.Text = avto.Leto.ToString();
-            CenaTextBox.Text = avto.Cena.ToString();
-            ProstorninaTextBox.Text = avto.ProstorninaMotorja.ToString();
-
-            foreach (ComboBoxItem item in GorivoComboBox.Items)
-            {
-                if (item.Content.ToString() == avto.Gorivo.ToString())
-                {
-                    GorivoComboBox.SelectedItem = item;
-                    break;
-                }
-            }
-
-            _potDoSlike = avto.Slika;
-            if (!string.IsNullOrEmpty(_potDoSlike))
-            {
-                try
-                {
-                    SlikaImage.Source = new BitmapImage(new Uri(_potDoSlike, UriKind.Relative));
-                }
-                catch
-                {
-                    SlikaImage.Source = null;
-                }
-            }
-            else
-            {
-                SlikaImage.Source = null;
-            }
+            this.DataContext = avto; // Set DataContext to Avto object.
         }
 
+        // Open image dialog and update the Avto's image.
         private void SlikaImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -65,9 +36,14 @@ namespace WPFNaloga1
             {
                 _potDoSlike = dlg.FileName;
                 SlikaImage.Source = new BitmapImage(new Uri(_potDoSlike));
+                if (_trenutniAvto != null)
+                {
+                    _trenutniAvto.Slika = _potDoSlike; // Update image path in the Avto object.
+                }
             }
         }
 
+        // Saving the Avto object with validation.
         private void Shrani_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(ZnamkaTextBox.Text) ||
@@ -81,18 +57,23 @@ namespace WPFNaloga1
                 return;
             }
 
+            // Update the Avto object properties
             _trenutniAvto.Znamka = ZnamkaTextBox.Text;
             _trenutniAvto.Model = ModelTextBox.Text;
             _trenutniAvto.Leto = leto;
             _trenutniAvto.Cena = cena;
             _trenutniAvto.ProstorninaMotorja = prostornina;
             _trenutniAvto.Gorivo = (Fuel)Enum.Parse(typeof(Fuel), ((ComboBoxItem)GorivoComboBox.SelectedItem).Content.ToString());
+            
+            // If image path is not empty, save it.
             _trenutniAvto.Slika = _potDoSlike ?? _trenutniAvto.Slika;
+
+            this.Close();
         }
 
+        // Close the window without saving changes.
         private void Preklici_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-    }
-} 
+    }} 
