@@ -6,16 +6,24 @@
         xmlns:local="clr-namespace:WPFNaloga1"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="1000"
-         MinHeight="600" MinWidth="1000"
-        >
+        MinHeight="600" MinWidth="1000">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+            <local:PriceLessThanConverter x:Key="PriceLessThanConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
     <Window.DataContext>
         <local:AvtoViewModel />
     </Window.DataContext>
-    <Window.Resources>
-        <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
-        <local:PriceLessThanConverter x:Key="PriceLessThanConverter"/>
-    </Window.Resources>
-    <DockPanel>
+
+    <DockPanel Background="{StaticResource BackgroundBrush}">
+        <!-- Menu -->
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Datoteka">
                 <MenuItem Header="Izhod" Command="{Binding IzhodCommand}" />
@@ -26,81 +34,76 @@
                 <MenuItem Header="Odstrani" Command="{Binding OdstraniAvtoCommand}" />
                 <MenuItem Header="Dodaj" Command="{Binding DodajAvtoCommand}" />
                 <MenuItem Header="Dodaj Statično" Command="{Binding DodajAvtoStaticnoCommand}" />
-                <MenuItem Header="Uredi" Command="{Binding ShraniCommand}" />
+                <MenuItem Header="Shrani" Command="{Binding ShraniCommand}" />
             </MenuItem>
-
         </Menu>
-        <!-- Filter Sekcija -->
-        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Margin="10">
-            <TextBlock Text="Filter:" VerticalAlignment="Center" Margin="5"/>
-            <TextBox Width="200" Text="{Binding FilterText}" Margin="5"/>
-            <ComboBox ItemsSource="{Binding allFuels}"    SelectedItem="{Binding SelectedFuel}" />
-            <Button Width="120" Height="40" Command="{Binding FiltrirajCommand}" Margin="5" Click="Button_Click">
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="Slike/Ikone/filter.jpg" Width="16" Height="16" Margin="0,0,5,0"/>
-                    <TextBlock Text="Filtriraj"/>
-                </StackPanel>
-            </Button>
-        </StackPanel>
+
+        <!-- Filter sekcija -->
+        <Border Style="{StaticResource RoundedBorderFilter}" DockPanel.Dock="Left" >
+            <StackPanel>
+                <TextBlock Text="Filter:" Style="{StaticResource HeaderTextBlock}" />
+                <TextBox Text="{Binding FilterText}" Style="{StaticResource DefaultTextBox}" />
+                <ComboBox ItemsSource="{Binding allFuels}" SelectedItem="{Binding SelectedFuel}" Style="{StaticResource DefaultComboBox}" />
+                <Button Command="{Binding FiltrirajCommand}" Style="{StaticResource BaseButton}">
+                    <StackPanel Orientation="Horizontal" >
+                    <Image Source="Slike/Ikone/filter.jpg" Style="{StaticResource IconImage}"/>
+                        <TextBlock Text="Filtriraj" Style="{StaticResource BaseTextBlock}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!-- Podrobnosti izbranega avtomobila -->
+        <Border Style="{StaticResource RoundedBorder}" DockPanel.Dock="Right" Visibility="{Binding IzbraniAvto, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackPanel>
+                <TextBlock Text="Podrobnosti avtomobila" Style="{StaticResource HeaderTextBlock}" />
+                <Image Source="{Binding IzbraniAvto.Slika}" Style="{StaticResource NoCarImage}"/>
+                <TextBlock Text="{Binding IzbraniAvto.Znamka}"  />
+                <TextBlock Text="{Binding IzbraniAvto.Model}" />
+                <TextBlock Text="{Binding IzbraniAvto.Leto}" />
+                <TextBlock Text="{Binding IzbraniAvto.Cena, StringFormat='Cena: {0} €'}" />
+                <TextBlock Text="{Binding IzbraniAvto.ProstorninaMotorja, StringFormat='Prostornina Motorja: {0} l'}" />
+                <TextBlock Text="{Binding IzbraniAvto.Gorivo}" />
+            </StackPanel>
+        </Border>
+
+        <!-- Slika, ko ni izbranega avta -->
+        <Border Style="{StaticResource RoundedBorder}" DockPanel.Dock="Right" Visibility="{Binding IzbraniAvto, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Invert}">
+            <StackPanel>
+                <Image Source="Slike/no-car.jpg" Style="{StaticResource NoCarImage }"/>
+                <TextBlock Text="Izberite avto s seznama" Style="{StaticResource BoldText}"/>
+            </StackPanel>
+        </Border>
 
         <!-- Glavna vsebina -->
-
-        <!-- Podrobnosti o izbranem avtu in podobni avtomobili -->
-        <StackPanel DockPanel.Dock="Right" Grid.Column="2" Margin="10" Visibility="{Binding IzbraniAvto, Converter={StaticResource NullToVisibilityConverter}}">
-            <TextBlock Text="Podrobnosti avtomobila" FontWeight="Bold" FontSize="16" Margin="5"/>
-            <Image Source="{Binding IzbraniAvto.Slika}" Height="240" Width="400" Stretch="UniformToFill" Margin="5"/>
-            <TextBlock Text="{Binding IzbraniAvto.Znamka}" FontSize="16" FontWeight="Bold"/>
-            <TextBlock Text="{Binding IzbraniAvto.Model}" FontSize="14"/>
-            <TextBlock Text="{Binding IzbraniAvto.Leto}" FontSize="14"/>
-            <TextBlock Text="{Binding IzbraniAvto.Cena, StringFormat='Cena: {0} €'}" FontSize="14"/>
-            <TextBlock Text="{Binding IzbraniAvto.ProstorninaMotorja ,StringFormat='Prostornina Motorja: {0} l' }" FontSize="14"/>
-            <TextBlock Text="{Binding IzbraniAvto.Gorivo}" FontSize="14"/>
-        </StackPanel>
-        <StackPanel DockPanel.Dock="Right"  Grid.Column="2" Margin="10" Visibility="{Binding IzbraniAvto, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Invert}">
-            <Image Source="Slike/no-car.jpg" Height="300" Width="300" Margin="10" HorizontalAlignment="Center"/>
-            <TextBlock Text="Izberite avto s seznama" FontSize="16" FontWeight="Bold" Foreground="Gray" TextAlignment="Center"/>
-        </StackPanel>
-        <Grid >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-                <!-- Podrobnosti o izbranem avtu -->
-            </Grid.RowDefinitions>
-
-            <!-- Seznam avtomobilov -->
-            <ListView ItemsSource="{Binding FilterAvtomobili}" SelectedItem="{Binding IzbraniAvto}" SelectionChanged="ListView_SelectionChanged">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation="Horizontal" Margin="5">
-                            <!-- Slika avtomobila -->
-                            <Image Source="{Binding Slika}" Width="100" Height="100" Margin="5"/>
-
-                            <!-- Podatki o avtomobilu -->
-                            <StackPanel>
-                                <TextBlock Text="{Binding Znamka}" FontWeight="Bold" FontSize="16" Margin="5"/>
-                                <TextBlock Text="{Binding Model}" FontSize="14" Margin="5"/>
-                                <TextBlock Text="{Binding Leto}" FontSize="14" Margin="5"/>
-                                <TextBlock Text="{Binding Cena, StringFormat='Cena: {0} €'}" FontSize="14" Margin="5"/>
-                                <TextBlock Text="{Binding ProstorninaMotorja , StringFormat='Prostornina Motorja: {0} l'}" />
+        <Border Style="{StaticResource RoundedBorder}">
+            <Grid>
+                <ListView ItemsSource="{Binding FilterAvtomobili}" SelectedItem="{Binding IzbraniAvto}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Slika}" Style="{StaticResource ListImage}"/>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Znamka}" Style="{StaticResource BoldText}" />
+                                    <TextBlock Text="{Binding Model}" Style="{StaticResource BaseTextBlock}" />
+                                    <TextBlock Text="{Binding Leto}" Style="{StaticResource BaseTextBlock}"/>
+                                    <TextBlock Text="{Binding Cena, StringFormat='Cena: {0} €'}" Style="{StaticResource BaseTextBlock}"/>
+                                    <TextBlock Text="{Binding ProstorninaMotorja , StringFormat='Prostornina Motorja: {0} l'}" Style="{StaticResource BaseTextBlock}"/>
+                                </StackPanel>
+                                <StackPanel.Style>
+                                    <Style TargetType="StackPanel">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Cena, Converter={StaticResource PriceLessThanConverter}}" Value="True">
+                                                <Setter Property="Background" Value="LightBlue"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </StackPanel.Style>
                             </StackPanel>
-                            <StackPanel.Style>
-                                <Style TargetType="StackPanel">
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Cena, Converter={StaticResource PriceLessThanConverter}}" Value="True">
-                                            <DataTrigger.Setters>
-                                                <Setter Property="Background" Value="Blue"/>
-                                            </DataTrigger.Setters>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </StackPanel.Style>
-                        </StackPanel>
-                        <!-- EventTrigger za animacijo ozadja ob ceni manj kot 10.000€ -->
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Border>
     </DockPanel>
-
 </Window>

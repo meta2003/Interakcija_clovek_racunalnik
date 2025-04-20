@@ -17,9 +17,10 @@
     <SolidColorBrush x:Key="WarningBrush" Color="{StaticResource WarningColor}"/>
 
     <!-- Osnovni StackPanel za kartice z belim ozadjem in zaobljenimi robovi -->
-    <Style x:Key="CardContainer" TargetType="StackPanel">
+    <Style x:Key="CardContainer" TargetType="Border">
         <Setter Property="Background" Value="{StaticResource CardBackgroundBrush}" />
-        <Setter Property="Margin" Value="5" />
+        <Setter Property="Margin" Value="5" 
+                />
     </Style>
 
     <!-- Filter & Podrobnosti (uporabljajo isti base) -->
@@ -34,16 +35,26 @@
 
     <!-- TextBlock osnovni stil -->
     <Style x:Key="BaseTextBlock" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Margin" Value="3" />
     </Style>
+    <Style x:Key="BoldText" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource TextBrush}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="3" />
+    </Style>
+
 
     <!-- Naslov (izpeljan stil) -->
     <Style x:Key="HeaderTextBlock" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlock}">
         <Setter Property="FontSize" Value="20" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="Foreground" Value="{StaticResource PrimaryBrush}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="5,10,5,5" />
     </Style>
 
@@ -70,15 +81,28 @@
         <Setter Property="Margin" Value="5" />
         <Setter Property="BorderBrush" Value="{StaticResource PrimaryBrush}" />
         <Setter Property="Background" Value="White" />
-        <Setter Property="CornerRadius" Value="5" />
     </Style>
 
+    <Style x:Key="RoundedBorder" TargetType="Border">
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Background" Value="{StaticResource CardBackgroundBrush}"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect BlurRadius="6" ShadowDepth="2" Opacity="0.2" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="RoundedBorderFilter" TargetType="Border" BasedOn="{StaticResource RoundedBorder}">
+        <Setter Property="Width" Value="200"/>
+    </Style>
     <!-- Gumbi -->
     <Style x:Key="BaseButton" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource PrimaryBrush}" />
         <Setter Property="Foreground" Value="White" />
-        <Setter Property="Padding" Value="10,5" />
-        <Setter Property="Margin" Value="5" />
+        <Setter Property="Padding" Value="20" />
+        <Setter Property="Margin" Value="20" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="Cursor" Value="Hand" />
         <Setter Property="BorderThickness" Value="0" />
@@ -100,14 +124,27 @@
 
     <!-- Image default -->
     <Style x:Key="DefaultImage" TargetType="Image">
-        <Setter Property="Stretch" Value="UniformToFill"/>
+        <Setter Property="Stretch" Value="Uniform"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
+    <Style x:Key="ListImage" TargetType="Image" BasedOn="{StaticResource DefaultImage}">
+        <Setter Property="Width" Value="100"/>
+        <Setter Property="Height" Value="100"/>
+    </Style>
+    <Style x:Key="IconImage" TargetType="Image" BasedOn="{StaticResource DefaultImage}">
+        <Setter Property="Width" Value="16"/>
+        <Setter Property="Height" Value="16"/>
+    </Style>
+    <Style x:Key="NoCarImage" TargetType="Image" BasedOn="{StaticResource DefaultImage}">
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Height" Value="300"/>
+    </Style>
+
+
 
     <!-- Kartica (item v ListViewju) s sivo podlago -->
     <Style x:Key="ListItemCard" TargetType="StackPanel" BasedOn="{StaticResource CardContainer}">
         <Setter Property="Background" Value="{StaticResource ItemBackgroundBrush}" />
-        <Setter Property="CornerRadius" Value="6" />
     </Style>
 
 </ResourceDictionary>
