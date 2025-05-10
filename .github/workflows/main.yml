@@ -11,7 +11,7 @@ jobs:
     name: Linux Build & Test
     steps:
       - name: Move into director
-        run: cd WPFNaloga1
+        run: cd src/WPFNaloga1
 
       - name: Checkout repository
         uses: actions/checkout@v3
