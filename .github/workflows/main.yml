@@ -1,0 +1,58 @@
+name: CI Interakcija Clovek Racunalnik
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  linux-job:
+    runs-on: ubuntu-latest
+    name: Linux Build & Test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build project
+        run: dotnet build --configuration Release
+
+      - name: Run tests
+        run: dotnet test --no-build --verbosity normal --logger trx --results-directory TestResults
+
+      - name: Run static analysis
+        run: dotnet format --verify-no-changes
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-linux
+          path: TestResults
+
+  local-job:
+    runs-on: self-hosted
+    name: Local Debug Build & Analysis
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build in Debug
+        run: dotnet build --configuration Debug
+
+      - name: Static Code Analysis
+        run: dotnet format --verify-no-changes
+
+      - name: Generate build artifacts
+        run: |
+          mkdir -p artifacts
+          cp -r bin/Debug/* artifacts/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-artifacts-local
+          path: artifacts
