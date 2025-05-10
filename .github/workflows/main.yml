@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Linux Build & Test
     steps:
+      - name: show all dir
+        run: ls
+
       - name: Move into director
         run: cd src/WPFNaloga1
 
