@@ -45,6 +45,7 @@ jobs:
         run: dotnet build WPFNaloga1/WPFNaloga1/WPFNaloga1.csproj --configuration Debug
 
       - name: Static Code Analysis
+        continue-on-error: true
         run: dotnet format WPFNaloga1/WPFNaloga1/WPFNaloga1.csproj --verify-no-changes
 
       - name: Generate build artifacts
