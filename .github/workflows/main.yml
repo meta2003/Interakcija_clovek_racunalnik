@@ -26,7 +26,7 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Run static analysis
-        run: dotnet format Interakcija_clovek_racunalnik-main/WPFNaloga1/WPFNaloga1/WPFNaloga1.csproj --verify-no-changes
+        run: dotnet format WPFNaloga1/WPFNaloga1/WPFNaloga1.csproj --verify-no-changes
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
