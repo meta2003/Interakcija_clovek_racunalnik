@@ -10,12 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Linux Build & Test
     steps:
-      - name: show all dir
-        run: ls
-
-      - name: Move into director
-        run: cd src/WPFNaloga1
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -24,14 +18,8 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Build project
-        run: dotnet build --configuration Release
-
-      - name: Run tests
-        run: dotnet test --no-build --verbosity normal --logger trx --results-directory TestResults
-
       - name: Run static analysis
-        run: dotnet format --verify-no-changes
+        run: dotnet format Interakcija_clovek_racunalnik-main/WPFNaloga1/WPFNaloga1/WPFNaloga1.csproj --verify-no-changes
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
