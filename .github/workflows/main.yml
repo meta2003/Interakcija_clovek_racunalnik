@@ -43,7 +43,11 @@ jobs:
       - name: Generate build artifacts
         run: |
           mkdir -p artifacts
-          cp -r bin/Debug/* artifacts/
+          if (Test-Path "WPFNaloga1/WPFNaloga1/bin/Debug") {
+            cp -r WPFNaloga1/WPFNaloga1/bin/Debug/* artifacts/
+          }
+        shell: pwsh
+
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
