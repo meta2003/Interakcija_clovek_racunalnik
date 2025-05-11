@@ -50,12 +50,9 @@ namespace WPFNaloga1
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+     
+     
+        private void ListView_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             if (DataContext is AvtoViewModel vm && vm.IzbraniAvto != null)
             {
@@ -66,8 +63,8 @@ namespace WPFNaloga1
                     urediWindow.Focus();
                 }
             }
-        }
 
+        }
     }
 
 

@@ -1,0 +1,91 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod.golob\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod.golob\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\urediavtowindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\urediavtowindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod.golob\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\avtoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\avtoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|c:\\users\\metod.golob\\source\\repos\\interakcija_clovek_racunalnik\\wpfnaloga1\\wpfnaloga1\\urediavtowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5A80A2E9-CCED-4CD9-8387-5275F5D65A1D}|WPFNaloga1\\WPFNaloga1.csproj|solutionrelative:wpfnaloga1\\urediavtowindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WPFNaloga1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwD8AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T19:28:35.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UrediAvtoWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\UrediAvtoWindow.xaml",
+              "RelativeDocumentMoniker": "WPFNaloga1\\UrediAvtoWindow.xaml",
+              "ToolTip": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\UrediAvtoWindow.xaml",
+              "RelativeToolTip": "WPFNaloga1\\UrediAvtoWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-20T19:02:51.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UrediAvtoWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\UrediAvtoWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\UrediAvtoWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\UrediAvtoWindow.xaml.cs",
+              "RelativeToolTip": "WPFNaloga1\\UrediAvtoWindow.xaml.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T19:02:50.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AvtoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\AvtoViewModel.cs",
+              "RelativeDocumentMoniker": "WPFNaloga1\\AvtoViewModel.cs",
+              "ToolTip": "C:\\Users\\metod.golob\\source\\repos\\Interakcija_clovek_racunalnik\\WPFNaloga1\\WPFNaloga1\\AvtoViewModel.cs",
+              "RelativeToolTip": "WPFNaloga1\\AvtoViewModel.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAmwBQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T18:59:29.526Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

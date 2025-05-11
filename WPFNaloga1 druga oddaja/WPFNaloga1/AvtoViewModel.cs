@@ -73,7 +73,7 @@ namespace WPFNaloga1
             DodajAvtoStaticnoCommand = new RelayCommand(o => DodajAvtoStaticno());
             DodajAvtoCommand = new RelayCommand(o => DodajAvto());
             UrediAvtoStaticnoCommand = new RelayCommand(o => UrediStaticnoAvto(), o => IzbraniAvto != null);
-            UrediAvtoCommand = new RelayCommand(o => OdpriUrediAvto(), o => IzbraniAvto != null);
+            UrediAvtoCommand = new RelayCommand(o=> OdpriUrediAvto(), o => IzbraniAvto != null);
             OdstraniAvtoCommand = new RelayCommand(o => OdstraniAvto(), o => IzbraniAvto != null);
             IzhodCommand = new RelayCommand(o => IzhodIzAplikacije());
             FiltrirajCommand = new RelayCommand(o => FilterCars());
@@ -85,7 +85,7 @@ namespace WPFNaloga1
             ZahtevajUrejanjeAvta?.Invoke(IzbraniAvto);
         }
 
-
+      
         private void DodajAvto()
         {
             var dodajWindow = new DodajOglasWindow();

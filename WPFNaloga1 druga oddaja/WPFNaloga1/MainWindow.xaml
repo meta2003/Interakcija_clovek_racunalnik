@@ -1,0 +1,109 @@
+﻿<Window x:Class="WPFNaloga1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFNaloga1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000"
+        MinHeight="600" MinWidth="1000">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <local:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+            <local:PriceLessThanConverter x:Key="PriceLessThanConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <local:AvtoViewModel />
+    </Window.DataContext>
+
+    <DockPanel Background="{StaticResource BackgroundBrush}">
+        <!-- Menu -->
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Datoteka">
+                <MenuItem Header="Izhod" Command="{Binding IzhodCommand}" />
+            </MenuItem>
+            <MenuItem Header="Oglas">
+                <MenuItem Header="Uredi" Command="{Binding UrediAvtoCommand}" />
+                <MenuItem Header="Uredi Statično" Command="{Binding UrediAvtoStaticnoCommand}" />
+                <MenuItem Header="Odstrani" Command="{Binding OdstraniAvtoCommand}" />
+                <MenuItem Header="Dodaj" Command="{Binding DodajAvtoCommand}" />
+                <MenuItem Header="Dodaj Statično" Command="{Binding DodajAvtoStaticnoCommand}" />
+                <MenuItem Header="Shrani" Command="{Binding ShraniCommand}" />
+            </MenuItem>
+        </Menu>
+
+        <!-- Filter sekcija -->
+        <Border Style="{StaticResource RoundedBorderFilter}" DockPanel.Dock="Left" >
+            <StackPanel>
+                <TextBlock Text="Filter:" Style="{StaticResource HeaderTextBlock}" />
+                <TextBox Text="{Binding FilterText}" Style="{StaticResource DefaultTextBox}" />
+                <ComboBox ItemsSource="{Binding allFuels}" SelectedItem="{Binding SelectedFuel}" Style="{StaticResource DefaultComboBox}" />
+                <Button Command="{Binding FiltrirajCommand}" Style="{StaticResource BaseButton}">
+                    <StackPanel Orientation="Horizontal" >
+                    <Image Source="Slike/Ikone/filter.jpg" Style="{StaticResource IconImage}"/>
+                        <TextBlock Text="Filtriraj" Style="{StaticResource BaseTextBlock}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!-- Podrobnosti izbranega avtomobila -->
+        <Border Style="{StaticResource RoundedBorder}" DockPanel.Dock="Right" Visibility="{Binding IzbraniAvto, Converter={StaticResource NullToVisibilityConverter}}">
+            <StackPanel>
+                <TextBlock Text="Podrobnosti avtomobila" Style="{StaticResource HeaderTextBlock}" />
+                <Image Source="{Binding IzbraniAvto.Slika}" Style="{StaticResource NoCarImage}"/>
+                <TextBlock Text="{Binding IzbraniAvto.Znamka}"  />
+                <TextBlock Text="{Binding IzbraniAvto.Model}" />
+                <TextBlock Text="{Binding IzbraniAvto.Leto}" />
+                <TextBlock Text="{Binding IzbraniAvto.Cena, StringFormat='Cena: {0} €'}" />
+                <TextBlock Text="{Binding IzbraniAvto.ProstorninaMotorja, StringFormat='Prostornina Motorja: {0} l'}" />
+                <TextBlock Text="{Binding IzbraniAvto.Gorivo}" />
+            </StackPanel>
+        </Border>
+
+        <!-- Slika, ko ni izbranega avta -->
+        <Border Style="{StaticResource RoundedBorder}" DockPanel.Dock="Right" Visibility="{Binding IzbraniAvto, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Invert}">
+            <StackPanel>
+                <Image Source="Slike/no-car.jpg" Style="{StaticResource NoCarImage }"/>
+                <TextBlock Text="Izberite avto s seznama" Style="{StaticResource BoldText}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Glavna vsebina -->
+        <Border Style="{StaticResource RoundedBorder}">
+            <Grid>
+                <ListView ItemsSource="{Binding FilterAvtomobili}" SelectedItem="{Binding IzbraniAvto}" SelectionChanged="ListView_SelectionChanged_1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="{Binding Slika}" Style="{StaticResource ListImage}"/>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Znamka}" Style="{StaticResource BoldText}" />
+                                    <TextBlock Text="{Binding Model}" Style="{StaticResource BaseTextBlock}" />
+                                    <TextBlock Text="{Binding Leto}" Style="{StaticResource BaseTextBlock}"/>
+                                    <TextBlock Text="{Binding Cena, StringFormat='Cena: {0} €'}" Style="{StaticResource BaseTextBlock}"/>
+                                    <TextBlock Text="{Binding ProstorninaMotorja , StringFormat='Prostornina Motorja: {0} l'}" Style="{StaticResource BaseTextBlock}"/>
+                                </StackPanel>
+                                <StackPanel.Style>
+                                    <Style TargetType="StackPanel">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Cena, Converter={StaticResource PriceLessThanConverter}}" Value="True">
+                                                <Setter Property="Background" Value="LightBlue"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </StackPanel.Style>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Border>
+    </DockPanel>
+</Window>

@@ -19,7 +19,7 @@ namespace WPFNaloga1
             InitializeComponent();
         }
 
-        // Setting the DataContext so all controls are bound to this Avto object.
+      // Setting the DataContext so all controls are bound to this Avto object.
         public void NastaviAvto(Avto avto)
         {
             _trenutniAvto = avto;
@@ -64,7 +64,7 @@ namespace WPFNaloga1
             _trenutniAvto.Cena = cena;
             _trenutniAvto.ProstorninaMotorja = prostornina;
             _trenutniAvto.Gorivo = (Fuel)Enum.Parse(typeof(Fuel), ((ComboBoxItem)GorivoComboBox.SelectedItem).Content.ToString());
-
+            
             // If image path is not empty, save it.
             _trenutniAvto.Slika = _potDoSlike ?? _trenutniAvto.Slika;
 
@@ -76,5 +76,4 @@ namespace WPFNaloga1
         {
             this.Close();
         }
-    }
-}
+    }} 

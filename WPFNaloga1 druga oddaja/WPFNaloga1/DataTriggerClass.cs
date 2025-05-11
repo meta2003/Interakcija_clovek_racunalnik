@@ -8,4 +8,4 @@ using System.Windows.Data;
 
 namespace WPFNaloga1
 {
-}
+   }

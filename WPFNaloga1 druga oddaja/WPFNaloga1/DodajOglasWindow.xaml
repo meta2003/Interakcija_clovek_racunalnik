@@ -1,0 +1,78 @@
+﻿<Window x:Class="WPFNaloga1.DodajOglasWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFNaloga1"
+        mc:Ignorable="d"
+        Title="Dodaj oglas" Height="800" Width="800"
+        Background="{StaticResource BackgroundBrush}">
+
+    <Border Style="{StaticResource RoundedBorder}">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Znamka -->
+            <StackPanel Grid.Row="0">
+                <TextBlock Text="Znamka" Style="{StaticResource BaseTextBlock}" />
+                <TextBox x:Name="ZnamkaTextBox" Style="{StaticResource DefaultTextBox}" />
+            </StackPanel>
+
+            <!-- Model -->
+            <StackPanel Grid.Row="1">
+                <TextBlock Text="Model" Style="{StaticResource BaseTextBlock}" />
+                <TextBox x:Name="ModelTextBox" Style="{StaticResource DefaultTextBox}" />
+            </StackPanel>
+
+            <!-- Leto -->
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="Leto" Style="{StaticResource BaseTextBlock}" />
+                <TextBox x:Name="LetoTextBox" Style="{StaticResource DefaultTextBox}" />
+            </StackPanel>
+
+            <!-- Cena -->
+            <StackPanel Grid.Row="3">
+                <TextBlock Text="Cena" Style="{StaticResource BaseTextBlock}" />
+                <TextBox x:Name="CenaTextBox" Style="{StaticResource DefaultTextBox}" />
+            </StackPanel>
+
+            <!-- Prostornina -->
+            <StackPanel Grid.Row="4">
+                <TextBlock Text="Prostornina motorja" Style="{StaticResource BaseTextBlock}" />
+                <TextBox x:Name="ProstorninaTextBox" Style="{StaticResource DefaultTextBox}" />
+            </StackPanel>
+
+            <!-- Gorivo -->
+            <StackPanel Grid.Row="5">
+                <TextBlock Text="Vrsta goriva" Style="{StaticResource BaseTextBlock}" />
+                <ComboBox x:Name="GorivoComboBox" Style="{StaticResource DefaultComboBox}">
+                    <ComboBoxItem Content="Bencin" />
+                    <ComboBoxItem Content="Dizel" />
+                    <ComboBoxItem Content="Elektrika" />
+                </ComboBox>
+            </StackPanel>
+
+            <!-- Slika -->
+            <StackPanel Grid.Row="6">
+                <TextBlock Text="Slika vozila" Style="{StaticResource BaseTextBlock}" />
+                <Image x:Name="SlikaImage" Height="100" Style="{StaticResource DefaultImage}" MouseDown="SlikaImage_MouseDown"/>
+            </StackPanel>
+
+            <!-- Gumbi -->
+            <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10">
+                <Button Content=" Shrani " Style="{StaticResource BaseButton}" Click="Shrani_Click"/>
+                <Button Content=" Prekliči "  Style="{StaticResource BaseButton}" Click="Preklici_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
