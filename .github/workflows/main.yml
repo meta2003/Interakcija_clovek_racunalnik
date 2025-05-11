@@ -13,20 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: List files recursivelykl
-        run: |
-          echo "==== CURRENT DIRECTORY ===="
-          pwd
-          echo "==== DIRECTORY TREE ===="
-          find . -type f | sort
-
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'
-
-      - name: Run static analysis
-        run: dotnet format WPFNaloga1/WPFNaloga1/WPFNaloga1.csproj --verify-no-changes
+               dotnet-version: '8.0.x'
+      - name: Run tests
+        run: dotnet test WPFNaloga1/WPFNaloga1.sln --configuration Debug --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
 
       - name: Upload test results
         uses: actions/upload-artifact@v4
