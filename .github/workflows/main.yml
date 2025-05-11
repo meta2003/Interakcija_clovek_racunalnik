@@ -41,13 +41,12 @@ jobs:
         run: dotnet format WPFNaloga1/WPFNaloga1/WPFNaloga1.csproj --verify-no-changes
 
       - name: Generate build artifacts
+        shell: powershell
         run: |
           mkdir -p artifacts
           if (Test-Path "WPFNaloga1/WPFNaloga1/bin/Debug") {
-            cp -r WPFNaloga1/WPFNaloga1/bin/Debug/* artifacts/
+            Copy-Item -Recurse -Path "WPFNaloga1/WPFNaloga1/bin/Debug/*" -Destination "artifacts"
           }
-        shell: pwsh
-
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
