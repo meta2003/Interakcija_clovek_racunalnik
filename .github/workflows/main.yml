@@ -6,26 +6,26 @@ on:
       - main
 
 jobs:
-  linux-job:
-    runs-on: ubuntu-latest
-    name: Linux Build & Test
+  windows-wpf-job:
+    runs-on: windows-latest
+    name: Windows Build & Test WPF
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      - name: Set up .NET
+  
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-               dotnet-version: '8.0.x'
+          dotnet-version: '8.0.x'
+  
       - name: Run tests
         run: dotnet test WPFNaloga1/WPFNaloga1.sln --configuration Debug --logger "trx;LogFileName=test_results.trx" --results-directory TestResults
-
+  
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
-          name: test-results-linux
+          name: test-results-windows
           path: TestResults
-
   local-job:
     runs-on: self-hosted
     name: Local Debug Build & Analysis
