@@ -59,6 +59,7 @@ namespace WPFNaloga1
         {
             if (DataContext is AvtoViewModel vm && vm.IzbraniAvto != null)
             {
+                //asdfalja
                 // Če je urejevalno okno že odprto, ga posodobimo
                 if (urediWindow != null)
                 {
